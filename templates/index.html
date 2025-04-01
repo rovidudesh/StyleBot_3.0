@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card chat-container">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">StyleBot <i class="bi bi-robot"></i></h5>
+                <button id="newChatBtn" class="btn btn-sm btn-light">
+                    <i class="bi bi-plus-circle"></i> New Chat
+                </button>
+            </div>
+            
+            <div id="userDetailsForm" class="card-body">
+                <h4 class="text-center mb-4">Let's get to know you!</h4>
+                <form id="startChatForm">
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Non-binary</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="height" class="form-label">Height</label>
+                        <input type="text" class="form-control" id="height" placeholder="e.g. 5'8" or 172cm" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="bodyType" class="form-label">Body Type</label>
+                        <select class="form-select" id="bodyType" required>
+                            <option value="" selected disabled>Select</option>
+                            <option value="hourglass">Hourglass</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="apple">Apple</option>
+                            <option value="pear">Pear</option>
+                            <option value="inverted triangle">Inverted Triangle</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">
+                        Start Styling Session <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <div id="chatInterface" class="d-none">
+                <div class="card-body chat-messages" id="chatMessages">
+                    <!-- Messages will appear here -->
+                </div>
+                
+                <div class="card-footer">
+                    <form id="chatForm" class="d-flex">
+                        <input type="text" class="form-control" id="userMessage" placeholder="Type your message..." autocomplete="off">
+                        <button type="submit" class="btn btn-primary ms-2">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
